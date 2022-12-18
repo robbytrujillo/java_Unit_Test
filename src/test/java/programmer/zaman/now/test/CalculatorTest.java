@@ -19,11 +19,13 @@ public class CalculatorTest {
     }
     @Test
     public void testDivideSuccess() {
-        var result = calculator.devide(100, 10);
+        var result = calculator.divide(100, 10);
         assertEquals(10, result);
     }
 
     public void testDivideFailed() {
-        calculator.devide(10, 0);
-    }
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.divide(10, 0);
+        }) ;
+   }
 }
