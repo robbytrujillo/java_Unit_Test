@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Test untuk kalkulator")
+@DisplayName("Test untuk Calkulator Class")
 public class CalculatorTest {
 
     private Calculator calculator = new Calculator();
