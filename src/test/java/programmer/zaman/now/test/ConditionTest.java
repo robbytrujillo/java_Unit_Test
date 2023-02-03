@@ -49,5 +49,21 @@ public class ConditionTest {
 
     }
 
+    @Test
+    @EnabledIfSystemProperties({
+            @EnabledIfSystemProperty(named = "java.vendor", matches = "Oracle Coorporation")
+    })
+    void testEnabledOnJavaVendorOracle() {
+
+    }
+
+    @Test
+    @DisabledIfSystemProperties({
+            @DisabledIfSystemProperty(named = "java.vendor", matches = "Oracle Coorporation")
+    })
+    void testDisabledOnJavaVendorOracle() {
+
+    }
+
 
 }
