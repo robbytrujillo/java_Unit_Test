@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
 
+import java.util.Properties;
+
 public class ConditionTest {
+
+    @Test
+    void testSystemProperties() {
+        Properties properties = System.getProperties();
+        properties.forEach((key, value) -> System.out.println(key + ": " + value));
+//        System.out.println(System.getProperties());
+    }
 
     @Test
     @EnabledOnOs({OS.WINDOWS})
@@ -39,4 +48,6 @@ public class ConditionTest {
     void testDisabledOnJava11To15() {
 
     }
+
+
 }
