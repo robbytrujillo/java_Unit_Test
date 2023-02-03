@@ -2,9 +2,7 @@ package programmer.zaman.now.test;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.DisabledOnOs;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 public class ConditionTest {
 
@@ -18,5 +16,27 @@ public class ConditionTest {
 
     }
 
+    @Test
+    @EnabledOnJre({JRE.JAVA_8})
+    void testEnabledOnJava8() {
 
+    }
+
+    @Test
+    @DisabledOnJre({JRE.JAVA_8})
+    void testDisabledOnJava8() {
+
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_15)
+    void testEnabledOnJava11To15() {
+
+    }
+
+    @Test
+    @DisabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_15)
+    void testDisabledOnJava11To15() {
+
+    }
 }
