@@ -13,6 +13,15 @@ public class OrderedTest {
     @Test
     @Order(1)
     void test3() {
+        OrderedTest test3 = new OrderedTest();
+        test3.test3();
+
+        OrderedTest test2 = new OrderedTest();
+        test2.test2();
+
+        OrderedTest test1 = new OrderedTest();
+        test1.test1();
+
         counter++;
         System.out.println(counter);
     }
