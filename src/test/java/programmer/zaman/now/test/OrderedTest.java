@@ -2,12 +2,22 @@ package programmer.zaman.now.test;
 
 import org.junit.jupiter.api.*;
 
-//@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+// @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class OrderedTest {
 
     private int counter = 0;
+
+    @BeforeAll
+    static void beforeAll() {
+
+    }
+
+    @AfterAll
+    static void afterAll() {
+
+    }
 
     @Test
     @Order(1)
@@ -24,10 +34,10 @@ public class OrderedTest {
 //        test1.test1();
 
         //PER CLASS
-        OrderedTest test = new OrderedTest();
-        test.test3();
-        test.test2();
-        test.test1();
+//        OrderedTest test = new OrderedTest();
+//        test.test3();
+//        test.test2();
+//        test.test1();
 
         counter++;
         System.out.println(counter);
