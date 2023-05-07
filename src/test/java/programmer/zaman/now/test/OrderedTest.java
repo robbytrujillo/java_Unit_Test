@@ -24,14 +24,11 @@ public class OrderedTest {
 //        test1.test1();
 
         //PER CLASS
-        OrderedTest test3 = new OrderedTest();
-        test3.test3();
+        OrderedTest test = new OrderedTest();
+        test.test3();
+        test.test2();
+        test.test1();
 
-        OrderedTest test2 = new OrderedTest();
-        test2.test2();
-
-        OrderedTest test1 = new OrderedTest();
-        test1.test1();
         counter++;
         System.out.println(counter);
     }
