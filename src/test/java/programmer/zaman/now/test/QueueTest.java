@@ -21,9 +21,18 @@ public class QueueTest {
 
         @Test
         @DisplayName("when offer, size must be 1")
-        void name() {
+        void offerNewData() {
             queue.offer("Robby");
             Assertions.assertEquals(1, queue.size());
         }
+
+        @Test
+        @DisplayName("when offer 2 data, size must be 2")
+        void offerMoreData() {
+            queue.offer("Robby");
+            queue.offer("Ilham");
+            Assertions.assertEquals(2, queue.size());
+        }
+
     }
 }
