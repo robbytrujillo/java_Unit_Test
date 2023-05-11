@@ -10,12 +10,10 @@ import programmer.zaman.now.test.resolver.RandomParameterResolver;
 
 import java.util.Random;
 
-@Extensions({
-        @ExtendWith(RandomParameterResolver.class)
-})
-public class RandomCalculatorTest  {
 
-    private Calculator calculator = new Calculator();
+public class RandomCalculatorTest extends AbstractCalculatorTest {
+
+
     @Test
     void testRandom(TestInfo info, Random random) {
         var a = random.nextInt();
