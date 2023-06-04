@@ -4,6 +4,8 @@ package programmer.zaman.now.test;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extensions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import programmer.zaman.now.test.resolver.RandomParameterResolver;
 
 import java.util.Random;
@@ -51,6 +53,16 @@ public class RandomCalculatorTest extends AbstractCalculatorTest {
 
         Assertions.assertEquals(expected, result);
 
+    }
+
+    @DisplayName("Test calculator")
+    @ParameterizedTest(name = "{diplayName} dengan parameter {0}")
+    @ValueSource(ints = {1,2,3,4,5,6,7,8,45,34,56})
+    void testWithParameter(int value) {
+        var expected = value + value;
+        var result = calculator.add(value, value);
+
+        Assertions.assertEquals(expected, result);
     }
 
 }
