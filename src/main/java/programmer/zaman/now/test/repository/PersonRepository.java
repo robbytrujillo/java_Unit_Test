@@ -4,5 +4,5 @@ import programmer.zaman.now.test.data.Person;
 
 public interface PersonRepository {
 
-    Person.selectById
+    // Person.selectById
 }
