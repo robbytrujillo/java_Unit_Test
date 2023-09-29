@@ -11,6 +11,7 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
+    // logic
     public Person get(String id) {
         Person person = personRepository.selectById(id);
         if (person != null) {
