@@ -37,7 +37,7 @@ public class PersonServiceTest {
 
     @Test
     void testGetPersonSuccess() {
-        // menambah behavior ke mock object
+        // menambah behavior ke mock object (objek tiruan)
         Mockito.when(personRepository.selectById("robby"))
                 .thenReturn(new Person("robby", "Robby"));
 
