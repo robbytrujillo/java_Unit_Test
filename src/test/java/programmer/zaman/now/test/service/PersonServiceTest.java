@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extensions;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import programmer.zaman.now.test.data.Person;
 import programmer.zaman.now.test.repository.PersonRepository;
 
 @Extensions({
@@ -27,9 +29,22 @@ public class PersonServiceTest {
     }
 
     @Test
-    void testNotFound() {
+    void testGetPersonNotFound() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
            personService.get("Not Found");
         });
+    }
+
+    @Test
+    void testGetPersonSuccess() {
+        // menambah behavior ke mock object
+        Mockito.when(personRepository.selectById("robby"))
+                .thenReturn(new Person("robby", "Robby"));
+
+        var person = personService.get("Not Found");
+
+        Assertions.assertNotNull(person);
+        Assertions.assertEquals("robby", person.getId());
+        Assertions.assertEquals("ٌٌRobby", person.getId());
     }
 }
