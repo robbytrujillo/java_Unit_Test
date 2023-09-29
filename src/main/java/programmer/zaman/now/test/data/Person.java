@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class Person {
 
-    private String id;
-    private String name;
+    private String id; // attribute id
+    private String name; // attribute name
 
-    public Person() {
+    public Person() { // constructor
     }
 
-    public Person(String id, String name) {
+    public Person(String id, String name) { // constructor id and name
         this.id = id;
         this.name = name;
     }
