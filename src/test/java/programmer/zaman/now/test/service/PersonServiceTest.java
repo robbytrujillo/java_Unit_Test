@@ -1,7 +1,9 @@
 package programmer.zaman.now.test.service;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extensions;
 import org.mockito.Mock;
@@ -22,5 +24,12 @@ public class PersonServiceTest {
     @BeforeEach
     void setUp() {
        personService = new PersonService(personRepository);
+    }
+
+    @Test
+    void testNotFound() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+           personService.get("Not Found");
+        });
     }
 }
