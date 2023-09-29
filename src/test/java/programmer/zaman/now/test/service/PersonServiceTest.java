@@ -41,11 +41,11 @@ public class PersonServiceTest {
         Mockito.when(personRepository.selectById("robby"))
                 .thenReturn(new Person("robby", "Robby"));
 
-        var person = personService.get("Not Found");
+        var person = personService.get("robby");
 
         Assertions.assertNotNull(person);
         Assertions.assertEquals("robby", person.getId());
-        Assertions.assertEquals("ٌٌRobby", person.getId());
+        Assertions.assertEquals("Robby", person.getName());
     }
 
     @Test
