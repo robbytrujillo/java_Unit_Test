@@ -13,7 +13,7 @@ public class PersonService {
 
     // logic
     public Person get(String id) {
-        Person person = personRepository.selectById(id);
+        Person person = personRepository.selectById(id); // personRepository ketergantungan terhadap interface/class lain
         if (person != null) {
             return person;
         } else {
