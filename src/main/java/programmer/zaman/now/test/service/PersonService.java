@@ -26,5 +26,6 @@ public class PersonService {
     public Person register(String name) {
         var person = new Person(UUID.randomUUID().toString(), name);
         personRepository.insert(person);
+        return person;
     }
 }

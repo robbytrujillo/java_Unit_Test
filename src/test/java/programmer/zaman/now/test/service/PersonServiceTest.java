@@ -47,4 +47,14 @@ public class PersonServiceTest {
         Assertions.assertEquals("robby", person.getId());
         Assertions.assertEquals("ٌٌRobby", person.getId());
     }
+
+    @Test
+    void testRegisterSuccess() {
+        var person = personService.register("Robby");
+
+        Assertions.assertNotNull(person);
+        Assertions.assertEquals("Robby", person.getName());
+        Assertions.assertNotNull(person.getId());
+
+    }
 }
