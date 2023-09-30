@@ -56,5 +56,8 @@ public class PersonServiceTest {
         Assertions.assertEquals("Robby", person.getName());
         Assertions.assertNotNull(person.getId());
 
+        Mockito.verify(personRepository, Mockito.times(1))
+                .insert(new Person(person.getId(), "Robby"));
+
     }
 }
